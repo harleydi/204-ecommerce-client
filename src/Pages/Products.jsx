@@ -59,7 +59,7 @@ const Products = () => {
     handleSort()
   }, [categoryOption])
 
-  console.log(limitedProducts[0].name)
+  
   const renderProducts = (arr, ) => {
 
   }
