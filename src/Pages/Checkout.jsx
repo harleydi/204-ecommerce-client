@@ -22,6 +22,7 @@ const Checkout = () => {
 
   const handleSubmitOrder = async (e) => {
     e.preventDefault()
+    console.log(userInfo)
     const data = {
         orderOwner: userInfo._id,
         orderTotal: orderTotal,

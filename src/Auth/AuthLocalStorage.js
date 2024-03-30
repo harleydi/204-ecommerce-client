@@ -5,8 +5,12 @@ const setUserToken = token => {
 }
 
 const getUserToken = () => {
-    const token = localStorage.getItem(tokenHeaderKey)
-    return JSON.parse(token)
+    try {
+        const token = localStorage.getItem(tokenHeaderKey)
+        return JSON.parse(token)
+    } catch (error) {
+        console.error('Error parsing user token: ', error)
+    }
 }
 
 const removeUserToken = () => {

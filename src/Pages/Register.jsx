@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { registerUser } from '../Api/api'
 import { useNavigate } from 'react-router-dom'
+import { Alert } from '@mui/material'
 
 const Register = () => {
   const [firstName, setFirstName] = useState('')
@@ -22,7 +23,8 @@ const Register = () => {
       }
       const registerResult = await registerUser(data)
       console.log(registerResult)
-      navigate("/login")
+      
+      return registerResult.success ? navigate("/login") : alert('Error Registering User!')
   }
   return (
     <div class="">
