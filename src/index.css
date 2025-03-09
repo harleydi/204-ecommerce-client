@@ -13,10 +13,14 @@
     @apply text-blue-600 m-2 px-2 py-2 hover:bg-blue-950 hover:text-blue-600 hover:rounded-md
   }
   .card {
-    @apply bg-zinc-700 h-96 w-80 mx-4 my-4
+    @apply bg-zinc-700 h-[30rem] w-80 mx-4 my-4
   }
   .primary-color {
     @apply text-blue-600
+  }
+
+  .pagination {
+    @apply text-blue-600 flex justify-center
   }
 }
 

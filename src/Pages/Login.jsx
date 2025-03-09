@@ -44,7 +44,7 @@ const Login = () => {
             </label>
             <label class="pl-6">
                 Password:{" "}
-                <input class="rounded-xl bg-gray-600 outline-none px-4 text-white" value={password} onChange={(e) => setPassword(e.target.value)} />
+                <input class="rounded-xl bg-gray-600 outline-none px-4 text-white" type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
             </label>
             <button class="btn" onClick={handleSubmit}>Submit</button>
         </form>

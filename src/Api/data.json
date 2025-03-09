@@ -1,0 +1,92 @@
+[
+    {
+      "_id": "550e8400-e29b-41d4-a716-446655440000",
+      "name": "Wireless Bluetooth Headphones",
+      "description": "High-quality wireless Bluetooth headphones with noise cancellation.",
+      "price": 99.99,
+      "category": "Electronics",
+      "quantity": 15,
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"
+    },
+    {
+      "_id": "550e8400-e29b-41d4-a716-446655440001",
+      "name": "Leather Office Chair",
+      "description": "Comfortable leather office chair with adjustable height and lumbar support.",
+      "price": 199.99,
+      "category": "Furniture",
+      "quantity": 8,
+      "image": "https://images.thdstatic.com/productImages/03f1c27a-b925-48a9-afb5-f047c7057966/svn/black-boss-office-products-executive-chairs-b7501-64_1000.jpg"
+    },
+    {
+      "_id": "550e8400-e29b-41d4-a716-446655440002",
+      "name": "Smart LED TV 55 Inch",
+      "description": "Ultra HD 4K Smart LED TV with built-in streaming apps.",
+      "price": 599.99,
+      "category": "Electronics",
+      "quantity": 12,
+      "image": "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=500"
+    },
+    {
+      "_id": "550e8400-e29b-41d4-a716-446655440003",
+      "name": "Stainless Steel Water Bottle",
+      "description": "Durable stainless steel water bottle with double-wall insulation.",
+      "price": 24.99,
+      "category": "Home & Kitchen",
+      "quantity": 20,
+      "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500"
+    },
+    {
+      "_id": "550e8400-e29b-41d4-a716-446655440004",
+      "name": "Running Shoes",
+      "description": "Lightweight running shoes with breathable mesh and cushioned soles.",
+      "price": 79.99,
+      "category": "Sports & Fitness",
+      "quantity": 18,
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"
+    },
+    {
+      "_id": "550e8400-e29b-41d4-a716-446655440005",
+      "name": "Wireless Mechanical Keyboard",
+      "description": "Ergonomic wireless mechanical keyboard with RGB lighting.",
+      "price": 129.99,
+      "category": "Electronics",
+      "quantity": 10,
+      "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500"
+    },
+    {
+      "_id": "550e8400-e29b-41d4-a716-446655440006",
+      "name": "Yoga Mat",
+      "description": "Eco-friendly yoga mat with non-slip surface and carrying strap.",
+      "price": 29.99,
+      "category": "Sports & Fitness",
+      "quantity": 25,
+      "image": "https://images.unsplash.com/photo-1576678927484-cc907957088c?w=500"
+    },
+    {
+      "_id": "550e8400-e29b-41d4-a716-446655440007",
+      "name": "Electric Coffee Grinder",
+      "description": "High-speed electric coffee grinder with adjustable grind settings.",
+      "price": 49.99,
+      "category": "Home & Kitchen",
+      "quantity": 14,
+      "image": "https://images.unsplash.com/photo-1568213816046-0ee1c42bd559?w=500"
+    },
+    {
+      "_id": "550e8400-e29b-41d4-a716-446655440008",
+      "name": "Portable Bluetooth Speaker",
+      "description": "Waterproof portable Bluetooth speaker with 12-hour battery life.",
+      "price": 59.99,
+      "category": "Electronics",
+      "quantity": 22,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp6kGK0EhgP5jW8lIYEWPNfLRherWhW7Qy2w&s"
+    },
+    {
+      "_id": "550e8400-e29b-41d4-a716-446655440009",
+      "name": "Men's Casual Shirt",
+      "description": "Comfortable and stylish men's casual shirt made from premium cotton.",
+      "price": 39.99,
+      "category": "Fashion",
+      "quantity": 30,
+      "image": "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500"
+    }
+]

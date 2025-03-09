@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import ProductCard from '../Components/ProductCard'
 import { getLimitedProducts, getProducts } from '../Api/api'
+import ProductData from '../Api/data.json'
 import { FormControl, InputLabel, MenuItem, Pagination, Select } from '@mui/material'
 import { deepOrange, indigo } from '@mui/material/colors'
 import { BorderColor } from '@mui/icons-material'
 import { useOutletContext } from 'react-router-dom'
 
+
+
+console.log(ProductData)
+
 const Products = () => {
-  const [allProducts, setAllProducts] = useState([])
+  const [allProducts, setAllProductsData] = useState([])
   const [limitedProducts, setLimitedProducts] = useState([])
   const [sortOption, setSortOption] = useState('Recommended')
+  const [sortedProducts, setSortedProduts] = useState()
   const [categoryOption, setCategoryOption] = useState('')
   const [page, setPage] = useState(0)
 
@@ -19,50 +25,56 @@ const Products = () => {
   useEffect(() => {
     const getAll = async () => {
       const data = await getProducts()
-      setAllProducts(data.data)
+      setProductData(data.data)
       console.log(data)
     }
     getAll()
   }, [])
 
-  useEffect(() => {
-    const getLimited = async () => {
-      const data = await getLimitedProducts(page)
-      setLimitedProducts(data.data)
-      // console.log(data.data)
-      return data.data
-    }
-    getLimited()
-    console.log(limitedProducts)
-  }, [page])
+ 
 
   useEffect(() => {
-    const handleSort = async () => {
+    const handleCategoryAndSort = async () => {
+      let filteredProducts = ProductData
       if (categoryOption === 'Electronics') {
-        const electronics = allProducts.filter((item) => item.category === categoryOption.toLowerCase())
-        console.log(electronics)
-        setLimitedProducts(electronics)
-      } else if (categoryOption === 'Jewelery') {
-         const jewelery = allProducts.filter((item) => item.category === categoryOption.toLowerCase())
-         setLimitedProducts(jewelery)
-      } else if (categoryOption === "Men's clothing") {
-        const mens = allProducts.filter((item) => item.category === categoryOption.toLowerCase())
-        setLimitedProducts(mens)
-     } else if (categoryOption === "Women's clothing") {
-      const womens = allProducts.filter((item) => item.category === categoryOption.toLowerCase())
-      setLimitedProducts(womens)
-     } else {
-      const data = await getLimitedProducts(page)
-      setLimitedProducts(data.data)
+        filteredProducts = ProductData.filter((item) => item.category === 'Electronics')
+      } else if (categoryOption === 'Fashion') {
+        filteredProducts = ProductData.filter((item) => item.category === 'Fashion')  
+      } else if (categoryOption === "Home & Kitchen") {
+        filteredProducts = ProductData.filter((item) => item.category === 'Home & Kitchen')
+     } else if (categoryOption === "Sports & Fitness") {
+      filteredProducts = ProductData.filter((item) => item.category === 'Sports & Fitness')
      }
+
+
+     // Sorted products
+     let sortedProducts = [...filteredProducts]
+
+     if (sortOption === 'Lowest') {
+        sortedProducts.sort((a, b) => a.price - b.price )
+      } else if (sortOption === 'Highest') {
+        sortedProducts.sort((a, b) => b.price - a.price)
+      }
+
+      setLimitedProducts(sortedProducts)
     }
-    handleSort()
-  }, [categoryOption])
+    handleCategoryAndSort()
+
+   
+  }, [categoryOption, sortOption])
 
   
-  const renderProducts = (arr, ) => {
 
+  const handleShowProducts = () => {
+    // while (sortOption === 'Lowest') {
+    //   const low = ProductData.sort((a, b) => a - b )
+    //   setSortedProduts(low)
+    //   return sortedProducts.map(product => <ProductCard key={product.id} product={product} />)
+    // }
+
+    
   }
+  
   
   return (
     <div>
@@ -81,21 +93,24 @@ const Products = () => {
           <select class="bg-transparent font-light outline-none" onChange={(e) => setCategoryOption(e.target.value)}>
             <option>All</option>
             <option>Electronics</option>
-            <option>Jewelery</option>
-            <option>Men's clothing</option>
-            <option>Women's clothing</option>
+            <option>Fashion</option>
+            <option>Home & Kitchen</option>
+            <option>Sports & Fitness</option>
           </select>
         </label>
       </form>
       <span style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}} >
-        {limitedProducts.length > 0 && limitedProducts.map((product) => <ProductCard key={product.id} product={product} />)}
+        {Array.isArray(ProductData) && ProductData.length > 0 && categoryOption === "All" && sortOption === "Recommended" ? ( ProductData.map((product) => <ProductCard key={product.id} product={product} />)) : 
+        (
+          limitedProducts.map( product => <ProductCard key={product.id} product={product} />)
+        )}
       </span>
       <Pagination
         count={3}
         // page={page}
         onChange={(e) => setPage(Number(e.target.textContent) - 1)} 
-        style={{ display: 'flex', justifyContent: 'center' }}
-        sx={{ color: 'white'}} 
+        style={{ color: '#fff', display: 'flex', justifyContent: 'center'}}
+        sx={{ color: 'blue'}} 
       />
     </div>
   )
